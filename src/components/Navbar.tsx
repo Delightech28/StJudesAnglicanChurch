@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Cross } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const Navbar = () => {
@@ -21,7 +21,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <Cross className="h-8 w-8 text-accent" />
+             <img
+    src="/liturgy.png" // Adjust the path if needed
+    alt="St Jude's Anglican Logo"
+    className="h-8 w-8 object-contain"
+  />
             <div className="text-xl font-bold text-primary mt-1 md:mt-0">St Jude's Anglican</div>
           </div>
 
@@ -44,9 +48,9 @@ const Navbar = () => {
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-primary p-3"
+              className="text-primary"
             >
-              {isOpen ? <X className="h-10 w-10" /> : <Menu className="h-10 w-10" />}
+              {isOpen ? <X style={{width: '35px', height: '35px'}} /> : <Menu style={{width: '35px', height: '35px'}} />}
             </Button>
           </div>
         </div>

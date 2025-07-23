@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { Cross, MapPin, Phone, Mail, Facebook, Instagram, Youtube } from 'lucide-react';
+import { MapPin, Phone, Mail, Facebook, Instagram, Youtube } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -29,7 +29,11 @@ const Footer = () => {
           {/* Church Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-6">
-              <Cross className="h-8 w-8 text-accent" />
+                 <img
+    src="/liturgy.png" // Adjust the path if needed
+    alt="St Jude's Anglican Logo"
+    className="h-8 w-8 object-contain"
+  />
               <div className="text-xl font-bold">St Jude's Anglican</div>
             </div>
             <p className="text-primary-foreground/80 mb-6 leading-relaxed">
