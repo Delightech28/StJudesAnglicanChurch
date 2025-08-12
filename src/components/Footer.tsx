@@ -1,6 +1,11 @@
 import { Button } from '@/components/ui/button';
 import { MapPin, Phone, Mail, Facebook, Instagram, Youtube } from 'lucide-react';
-
+// Add WhatsApp SVG icon inline
+const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg {...props} viewBox="0 0 32 32" fill="currentColor">
+    <path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.668 4.627 1.934 6.6L4 29l7.6-1.934A12.94 12.94 0 0016 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm0 22c-1.98 0-3.91-.58-5.56-1.67l-.39-.25-4.51 1.15 1.2-4.39-.25-.4A9.97 9.97 0 016 15c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10zm5.13-7.44c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.41-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.34.42-.51.14-.17.18-.29.28-.48.09-.19.05-.36-.02-.5-.07-.14-.61-1.47-.83-2.01-.22-.54-.44-.47-.61-.48-.16-.01-.36-.01-.56-.01-.19 0-.5.07-.76.36-.26.29-1 1-1 2.43s1.03 2.82 1.18 3.02c.15.2 2.03 3.1 4.93 4.22.69.27 1.23.43 1.65.55.69.22 1.32.19 1.82.12.56-.08 1.65-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.11-.25-.18-.53-.32z"/>
+  </svg>
+);
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -133,15 +138,16 @@ const Footer = () => {
             <div className="text-sm text-primary-foreground/60">
               © {currentYear} St Jude's Anglican Church, Omole Phase 1. All rights reserved.
             </div>
-            <div className="flex gap-6 text-sm">
-              <a href="#" className="text-primary-foreground/60 hover:text-accent transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-primary-foreground/60 hover:text-accent transition-colors">
-                Terms of Service
-              </a>
-              <a href="#" className="text-primary-foreground/60 hover:text-accent transition-colors">
-                Accessibility
+                <div className="flex items-center gap-2 text-sm text-primary-foreground/60">
+              <span>Made by Solomon</span>
+              <a
+                href="https://wa.me/2349163854228?text=Hello%20Solomon%2C%20I%20am%20contacting%20you%20from%20St%20Jude%27s%20Anglican%20website"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 hover:text-green-500 transition-colors"
+              >
+                <WhatsAppIcon className="h-6 w-6" />
+               
               </a>
             </div>
           </div>

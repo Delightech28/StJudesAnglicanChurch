@@ -1,8 +1,14 @@
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, MapPin, Clock } from 'lucide-react';
-import heroImage from '@/assets/church-hero.jpg';
+import { ArrowRight, MapPin, Clock, X } from 'lucide-react';
+import heroImage from '@/assets/church-hero.jpeg';
+
+const YOUTUBE_URL = "https://www.youtube.com/embed/QnTFW68g2ww"; // Replace with your video ID
 
 const HeroSection = () => {
+
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -46,12 +52,35 @@ const HeroSection = () => {
             size="lg" 
             variant="outline" 
             className="border-2 border-white bg-white/10 text-white hover:bg-white hover:text-primary font-semibold px-8 py-3 text-lg"
+            onClick={() => setShowModal(true)}
           >
             Watch Online
           </Button>
         </div>
       </div>
-
+          {/* Modal for YouTube Video */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80">
+          <div className="relative bg-white rounded-lg shadow-lg max-w-3xl w-full p-4">
+            <button
+              className="absolute top-2 right-2 text-gray-700 hover:text-red-500"
+              onClick={() => setShowModal(false)}
+            >
+              <X className="h-6 w-6" />
+            </button>
+            <div className="aspect-w-16 aspect-h-9 w-full">
+              <iframe
+                src={YOUTUBE_URL}
+                title="St Jude's Anglican Church Live"
+                frameBorder="0"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+                className="w-full h-[400px] rounded-lg"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

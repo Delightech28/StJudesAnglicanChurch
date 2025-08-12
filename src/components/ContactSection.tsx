@@ -7,6 +7,8 @@ import { Label } from '@/components/ui/label';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
+const FORM_ENDPOINT = "https://formspree.io/f/xldlagrn";
+
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -23,14 +25,29 @@ const ContactSection = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+const FORM_ENDPOINT = "https://formspree.io/f/xldlagrn";
+
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  try {
+    const res = await fetch(FORM_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData)
+    });
+    if (!res.ok) throw new Error("Network error");
     toast({
       title: "Message Sent!",
       description: "Thank you for reaching out. We'll get back to you soon.",
     });
     setFormData({ name: '', email: '', subject: '', message: '' });
-  };
+  } catch (err) {
+    toast({
+      title: "Send failed",
+      description: "Please try again later.",
+    });
+  }
+};
 
   const contactInfo = [
     {
@@ -124,7 +141,7 @@ const ContactSection = () => {
                 <CardTitle className="text-2xl text-primary">Send us a Message</CardTitle>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
+           <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="name" className="text-foreground">Full Name *</Label>

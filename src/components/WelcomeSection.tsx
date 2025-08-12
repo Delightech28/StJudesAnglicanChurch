@@ -71,9 +71,52 @@ const WelcomeSection = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl"></div>
           </div>
         </div>
+        {/* Ministers Section */}
+        <div className="mt-16">
+          <h2 className="text-3xl font-bold text-primary mb-8 text-center">Our Ministers</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 justify-items-center">
+            {/* Example ministers, replace src and details as needed */}
+            {[
+              {
+                name: "Ven. Clement Ayo Aluko",
+                role: "Vicar",
+                img: "/ministers/john.jpg"
+              },
+              {
+                name: "Rev. Dr. Akintunde Akinlalu",
+                role: "Curate",
+                img: "/ministers/jane.jpg"
+              },
+              {
+                 name: "Rev. Dr. Olufemi Ogunro",
+                role: "Curate",
+                img: "/ministers/mark.jpg"
+              },
+              {
+                name: "Mrs. Laitan Eseigbe",
+                role: "Warden",
+                img: "/ministers/grace.jpg"
+              },
+              {
+                name: "Mr. Moses Adesina-Ola",
+                role: "Warden",
+                img: "/ministers/paul.jpg"
+              }
+            ].map((minister, idx) => (
+              <div key={idx} className="flex flex-col items-center">
+                <img
+                  src={minister.img}
+                  alt={minister.name}
+                  className="w-32 h-32 object-cover rounded-full shadow-lg mb-4 border-4 border-accent"
+                />
+                <div className="text-lg font-semibold text-primary">{minister.name}</div>
+                <div className="text-sm text-muted-foreground">{minister.role}</div>
+              </div>
+            ))}
       </div>
+      </div>
+        </div>
     </section>
   );
-};
-
+}
 export default WelcomeSection;

@@ -110,8 +110,14 @@ const Gallery = () => {
               <ArrowLeft className="h-5 w-5" />
             </Button>
             <div className="flex items-center gap-2">
-              <Cross className="h-8 w-8 text-accent" />
+              <div className="flex items-center space-x-2">
+             <img
+    src="/liturgy.png" // Adjust the path if needed
+    alt="St Jude's Anglican Logo"
+    className="h-8 w-8 object-contain"
+  />
               <span className="text-xl font-bold">St Jude's Anglican</span>
+              </div>
             </div>
           </div>
           <div className="text-center">
