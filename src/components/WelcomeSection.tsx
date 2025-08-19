@@ -1,7 +1,11 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Heart, Users, BookOpen, Hand } from 'lucide-react';
 import communityImage from '@/assets/community-worship.jpg';
-
+import vicarImg from '@/assets/vicar.jpeg';
+import curate2 from '@/assets/curate2.jpeg';
+import curate1 from '@/assets/curate1.jpeg';
+import warden1 from '@/assets/warden1.jpeg';
+import warden2 from '@/assets/warden2.jpeg';
 const WelcomeSection = () => {
   const values = [
     {
@@ -80,34 +84,34 @@ const WelcomeSection = () => {
               {
                 name: "Ven. Clement Ayo Aluko",
                 role: "Vicar",
-                img: "/ministers/john.jpg"
+                img: vicarImg
               },
               {
                 name: "Rev. Dr. Akintunde Akinlalu",
                 role: "Curate",
-                img: "/ministers/jane.jpg"
+                img: curate2
               },
               {
                  name: "Rev. Dr. Olufemi Ogunro",
                 role: "Curate",
-                img: "/ministers/mark.jpg"
+                img: curate1
               },
               {
                 name: "Mrs. Laitan Eseigbe",
                 role: "Warden",
-                img: "/ministers/grace.jpg"
+                img: warden1
               },
               {
                 name: "Mr. Moses Adesina-Ola",
                 role: "Warden",
-                img: "/ministers/paul.jpg"
+                img: warden2
               }
             ].map((minister, idx) => (
               <div key={idx} className="flex flex-col items-center">
                 <img
                   src={minister.img}
                   alt={minister.name}
-                  className="w-32 h-32 object-cover rounded-full shadow-lg mb-4 border-4 border-accent"
+                  className="w-36 h-36 md:w-40 md:h-40 object-cover object-top rounded-full shadow-lg mb-4 border-4 border-accent"
                 />
                 <div className="text-lg font-semibold text-primary">{minister.name}</div>
                 <div className="text-sm text-muted-foreground">{minister.role}</div>
