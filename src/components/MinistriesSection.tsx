@@ -10,42 +10,42 @@ const MinistriesSection = () => {
       title: "Choir Ministry",
       description: "Join our voices in praise through traditional hymns and contemporary worship songs. We rehearse on Thursday evenings and lead worship every Sunday.",
       leader: "Mr. Adebayo Oyejide",
-      contact: "choir@stjudesomole.org"
+    //  contact: "choir@stjudesomole.org"
     },
     {
       icon: Users,
       title: "Youth Fellowship",
       description: "Dynamic ministry for teenagers and young adults featuring Bible study, fun activities, leadership development, and community service projects.",
       leader: "Bro. Niyi",
-      contact: "youth@stjudesomole.org"
+     // contact: "youth@stjudesomole.org"
     },
     {
       icon: Heart,
       title: "Women's Guild",
       description: "Empowering women through Bible study, fellowship, mentorship, and community outreach. Monthly meetings with special events throughout the year.",
-      leader: "Mrs. Sarah Johnson",
-      contact: "womens@stjudesomole.org"
+      leader: "Mrs. Victoria Ayoola Aluko",
+    //  contact: "womens@stjudesomole.org"
     },
     {
       icon: Briefcase,
       title: "Men's Fellowship",
       description: "Building strong Christian men through prayer, Bible study, and brotherhood. Focused on spiritual growth, family leadership, and community impact.",
-      leader: "Mr. David Adebayo",
-      contact: "mens@stjudesomole.org"
+      leader: "Apostle Uzoma Ugonma",
+      contact: "stjudesmensfellowship@gmail.com"
     },
     {
       icon: Baby,
       title: "Children's Ministry",
       description: "Nurturing faith in our youngest members through age-appropriate Bible lessons, crafts, games, and special children's church programs.",
-      leader: "Bro. Charles",
-      contact: "children@stjudesomole.org"
+      leader: "Bro. Charles Diete-Koki",
+      //contact: "children@stjudesomole.org"
     },
     {
       icon: Heart,
       title: "Prayer Ministry",
       description: "Intercession and prayer support for our church family and community. Prayer chains, healing services, and spiritual warfare prayer teams.",
       leader: "Bro. Idahosa Osamhanze",
-      contact: "prayer@stjudesomole.org"
+    //  contact: "prayer@stjudesomole.org"
     }
   ];
 
